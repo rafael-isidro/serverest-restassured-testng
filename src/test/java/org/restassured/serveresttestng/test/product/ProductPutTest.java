@@ -54,7 +54,7 @@ public class ProductPutTest {
         productClient.deleteProduct(productExistingId, token);
     }
 
-    @Test(priority = 1)
+    @Test
     @Description(CT_PUT_001)
     public void testEditarProducoComSucesso() {
 
@@ -70,7 +70,7 @@ public class ProductPutTest {
 
     }
 
-    @Test(priority = 2)
+    @Test
     @Description(CT_PUT_002)
     public void testTentarEditarProdutoComNomeDescriptionVazios() {
 
@@ -88,7 +88,7 @@ public class ProductPutTest {
         softAssert.assertAll();
     }
 
-    @Test(priority = 3)
+    @Test
     @Description(CT_PUT_003)
     public void testTentarEditarProdutoComPrecoNegativo() {
 
@@ -104,7 +104,7 @@ public class ProductPutTest {
 
     }
 
-    @Test(priority = 4)
+    @Test
     @Description(CT_PUT_004)
     public void testTentarEditarProdutoComPrecoIgualAZero() {
 

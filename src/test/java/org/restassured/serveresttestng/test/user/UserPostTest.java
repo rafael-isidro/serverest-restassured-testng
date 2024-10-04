@@ -22,7 +22,7 @@ public class UserPostTest {
     private static final UserClient userClient = new UserClient();
     private static final SoftAssert softAssert = new SoftAssert();
 
-    @Test(priority = 1)
+    @Test
     @Description(CT_REGISTER_001)
     public void testRealizarRegistroComSucesso() {
 
@@ -37,7 +37,7 @@ public class UserPostTest {
 
     }
 
-    @Test(priority = 2)
+    @Test
     @Description(CT_REGISTER_002)
     public void testTentarRegistroComFormatoEmailInvalido() {
 
@@ -55,7 +55,7 @@ public class UserPostTest {
 
     }
 
-    @Test(priority = 3)
+    @Test
     @Description(CT_REGISTER_003)
     public void testTentarRegistroComDadosVazios() {
 
@@ -77,7 +77,7 @@ public class UserPostTest {
         softAssert.assertAll();
     }
 
-    @Test(priority = 4)
+    @Test
     @Description(CT_REGISTER_004)
     public void testTentarRegistroComEmailJaExistente() {
 

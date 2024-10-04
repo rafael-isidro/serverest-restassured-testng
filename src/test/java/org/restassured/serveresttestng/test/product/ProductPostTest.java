@@ -40,7 +40,7 @@ public class ProductPostTest {
                 ;
     }
 
-    @Test(priority = 1)
+    @Test
     @Description(CT_POST_001)
     public void testRealizarRegistroComSucesso() {
 
@@ -58,7 +58,7 @@ public class ProductPostTest {
 
     }
 
-    @Test(priority = 2)
+    @Test
     @Description(CT_POST_002)
     public void testTentarRegistroProdutoComNomeDescriptionVazios() {
 
@@ -76,7 +76,7 @@ public class ProductPostTest {
         softAssert.assertAll();
     }
 
-    @Test(priority = 3)
+    @Test
     @Description(CT_POST_003)
     public void testTentarRegistroProdutoComPrecoNegativo() {
 
@@ -92,7 +92,7 @@ public class ProductPostTest {
 
     }
 
-    @Test(priority = 4)
+    @Test
     @Description(CT_POST_004)
     public void testTentarRegistroProdutoComPrecoIgualAZero() {
 

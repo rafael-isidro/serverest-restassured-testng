@@ -22,7 +22,7 @@ public class LoginTest {
         private static final LoginClient loginClient = new LoginClient();
         private static final SoftAssert softAssert = new SoftAssert();
 
-        @Test(priority = 1)
+        @Test
         @Description(CT_LOGIN_001)
         public void testRealizarLoginComSucesso() {
 
@@ -42,7 +42,7 @@ public class LoginTest {
             softAssert.assertAll();
         }
 
-        @Test(priority = 2)
+        @Test
         @Description(CT_LOGIN_002)
         public void testTentarLoginDadosInvalidos() {
 
@@ -59,7 +59,7 @@ public class LoginTest {
             Assert.assertEquals(response, LOGIN_MESSAGES.invalidEmailPassword());
         }
 
-        @Test(priority = 3)
+        @Test
         @Description(CT_LOGIN_003)
         public void testTentarLoginEmailInvalido() {
 
@@ -76,7 +76,7 @@ public class LoginTest {
             Assert.assertEquals(response, LOGIN_MESSAGES.invalidEmailPassword());
         }
 
-        @Test(priority = 4)
+        @Test
         @Description(CT_LOGIN_004)
         public void testTentarLoginSenhaInvalida() {
 
@@ -93,7 +93,7 @@ public class LoginTest {
             Assert.assertEquals(response, LOGIN_MESSAGES.invalidEmailPassword());
         }
 
-        @Test(priority = 5)
+        @Test
         @Description(CT_LOGIN_005)
         public void testTentarLoginEmailVazio() {
 
@@ -110,7 +110,7 @@ public class LoginTest {
             Assert.assertEquals(response, LOGIN_MESSAGES.emptyEmail());
         }
 
-        @Test(priority = 6)
+        @Test
         @Description(CT_LOGIN_006)
         public void testTentarLoginEmailFormatoInvalido() {
 
@@ -127,7 +127,7 @@ public class LoginTest {
             Assert.assertEquals(response, LOGIN_MESSAGES.invalidFormatEmail());
         }
 
-        @Test(priority = 7)
+        @Test
         @Description(CT_LOGIN_007)
         public void testTentarLoginSenhaVazia() {
 

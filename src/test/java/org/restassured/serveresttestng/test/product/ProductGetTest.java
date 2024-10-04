@@ -44,7 +44,7 @@ public class ProductGetTest {
 
     }
 
-    @Test(priority = 1)
+    @Test
     @Description(CT_GET_001)
     public void testValidarListarProdutosComSucesso() {
 
@@ -58,7 +58,7 @@ public class ProductGetTest {
         softAssert.assertFalse(products.getProdutos().isEmpty());
     }
 
-    @Test(priority = 2)
+    @Test
     @Description(CT_GET_002)
     public void testValidarBuscarProdutoPorIDComSucesso() {
 
@@ -73,7 +73,7 @@ public class ProductGetTest {
         Assert.assertEquals(response.get_id(), productRegistered.get_id());
     }
 
-    @Test(priority = 3)
+    @Test
     @Description(CT_GET_003)
     public void testTentarBuscarUsuarioPorIDNaoCadastrado() {
 

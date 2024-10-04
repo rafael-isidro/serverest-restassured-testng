@@ -20,7 +20,7 @@ public class UserDeleteTest {
     private static final UserClient userClient = new UserClient();
     private static String userExistingId;
 
-    @Test(priority = 1)
+    @Test
     @Description(CT_DELETE_001)
     public void testValidarExclusaoUsuarioComSucesso() {
         registrarUsuario();
@@ -36,7 +36,7 @@ public class UserDeleteTest {
         excluirUsuario();
     }
 
-    @Test(priority = 2)
+    @Test
     @Description(CT_DELETE_002)
     public void testTentarExcluirUsuarioPorIDNaoCadastrado() {
 

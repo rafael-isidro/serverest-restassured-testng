@@ -22,7 +22,7 @@ public class UserGetTest {
     private static final UserClient userClient = new UserClient();
     private static final SoftAssert softAssert = new SoftAssert();
 
-    @Test(priority = 1)
+    @Test
     @Description(CT_GET_001)
     public void testValidarListarUsuariosComSucesso() {
         GetAllUsersResponseModel users = userClient.getAllUsers()
@@ -37,7 +37,7 @@ public class UserGetTest {
         softAssert.assertAll();
     }
 
-    @Test(priority = 2)
+    @Test
     @Description(CT_GET_002)
     public void testValidarBuscarUsuarioPorIDComSucesso() {
 
@@ -52,7 +52,7 @@ public class UserGetTest {
         Assert.assertEquals(user.get_id(), userId);
     }
 
-    @Test(priority = 3)
+    @Test
     @Description(CT_GET_003)
     public void testTentarBuscarUsuarioPorIDNaoCadastrado() {
 

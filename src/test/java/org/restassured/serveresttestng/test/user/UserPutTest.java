@@ -45,7 +45,7 @@ public class UserPutTest {
 
     }
 
-    @Test(priority = 1)
+    @Test
     @Description(CT_PUT_001)
     public void testEditarUsuarioComSucesso() {
 
@@ -60,7 +60,7 @@ public class UserPutTest {
 
     }
 
-    @Test(priority = 2)
+    @Test
     @Description(CT_PUT_002)
     public void testTentarEditarUsuarioComFormatoEmailInvalido() {
 
@@ -78,7 +78,7 @@ public class UserPutTest {
 
     }
 
-    @Test(priority = 3)
+    @Test
     @Description(CT_PUT_003)
     public void testTentarEditarUsuarioComDadosVazios() {
 
@@ -100,7 +100,7 @@ public class UserPutTest {
         softAssert.assertAll();
     }
 
-    @Test(priority = 4)
+    @Test
     @Description(CT_PUT_004)
     public void testTentarEditarUsuarioComEmailJaExistente() {
 

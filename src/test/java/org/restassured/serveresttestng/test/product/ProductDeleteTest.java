@@ -40,7 +40,7 @@ public class ProductDeleteTest {
 
     }
 
-    @Test(priority = 1)
+    @Test
     @Description(CT_DELETE_001)
     public void testValidarExclusaoProdutoComSucesso() {
         registrarProduto();
@@ -56,7 +56,7 @@ public class ProductDeleteTest {
         excluirUsuario();
     }
 
-    @Test(priority = 2)
+    @Test
     @Description(CT_DELETE_002)
     public void testTentarExcluirProdutoPorIDNaoCadastrado() {
 
