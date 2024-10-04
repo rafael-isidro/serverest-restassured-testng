@@ -22,6 +22,7 @@ import static utils.messages.ProductMessages.PRODUCT_MESSAGES;
 
 @Epic(EPIC_PRODUCT)
 @Story(PRODUCT_STORY_PUT)
+@Test
 public class ProductPutTest {
 
     private static final ProductClient productClient = new ProductClient();
@@ -54,7 +55,6 @@ public class ProductPutTest {
         productClient.deleteProduct(productExistingId, token);
     }
 
-    @Test
     @Description(CT_PUT_001)
     public void testEditarProducoComSucesso() {
 
@@ -70,7 +70,6 @@ public class ProductPutTest {
 
     }
 
-    @Test
     @Description(CT_PUT_002)
     public void testTentarEditarProdutoComNomeDescriptionVazios() {
 
@@ -88,7 +87,6 @@ public class ProductPutTest {
         softAssert.assertAll();
     }
 
-    @Test
     @Description(CT_PUT_003)
     public void testTentarEditarProdutoComPrecoNegativo() {
 
@@ -104,7 +102,6 @@ public class ProductPutTest {
 
     }
 
-    @Test
     @Description(CT_PUT_004)
     public void testTentarEditarProdutoComPrecoIgualAZero() {
 

@@ -19,6 +19,7 @@ import static utils.messages.ProductMessages.PRODUCT_MESSAGES;
 
 @Epic(EPIC_PRODUCT)
 @Story(PRODUCT_STORY_DELETE)
+@Test
 public class ProductDeleteTest {
 
     private static final ProductClient productClient = new ProductClient();
@@ -40,7 +41,6 @@ public class ProductDeleteTest {
 
     }
 
-    @Test
     @Description(CT_DELETE_001)
     public void testValidarExclusaoProdutoComSucesso() {
         registrarProduto();
@@ -56,7 +56,6 @@ public class ProductDeleteTest {
         excluirUsuario();
     }
 
-    @Test
     @Description(CT_DELETE_002)
     public void testTentarExcluirProdutoPorIDNaoCadastrado() {
 

@@ -21,6 +21,7 @@ import static utils.messages.ProductMessages.PRODUCT_MESSAGES;
 
 @Epic(EPIC_PRODUCT)
 @Story(PRODUCT_STORY_POST)
+@Test
 public class ProductPostTest {
 
     private static final ProductClient productClient = new ProductClient();
@@ -39,8 +40,7 @@ public class ProductPostTest {
                         .path("authorization")
                 ;
     }
-
-    @Test
+    
     @Description(CT_POST_001)
     public void testRealizarRegistroComSucesso() {
 
@@ -57,8 +57,7 @@ public class ProductPostTest {
         productClient.deleteProduct(response.get_id(), token);
 
     }
-
-    @Test
+    
     @Description(CT_POST_002)
     public void testTentarRegistroProdutoComNomeDescriptionVazios() {
 
@@ -76,7 +75,6 @@ public class ProductPostTest {
         softAssert.assertAll();
     }
 
-    @Test
     @Description(CT_POST_003)
     public void testTentarRegistroProdutoComPrecoNegativo() {
 
@@ -92,7 +90,6 @@ public class ProductPostTest {
 
     }
 
-    @Test
     @Description(CT_POST_004)
     public void testTentarRegistroProdutoComPrecoIgualAZero() {
 

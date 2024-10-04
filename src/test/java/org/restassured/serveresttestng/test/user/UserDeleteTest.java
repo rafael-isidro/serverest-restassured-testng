@@ -15,12 +15,12 @@ import static utils.messages.UserMessages.USER_MESSAGES;
 
 @Epic(EPIC_USER)
 @Story(USER_STORY_DELETE)
+@Test
 public class UserDeleteTest {
 
     private static final UserClient userClient = new UserClient();
     private static String userExistingId;
 
-    @Test
     @Description(CT_DELETE_001)
     public void testValidarExclusaoUsuarioComSucesso() {
         registrarUsuario();
@@ -36,7 +36,6 @@ public class UserDeleteTest {
         excluirUsuario();
     }
 
-    @Test
     @Description(CT_DELETE_002)
     public void testTentarExcluirUsuarioPorIDNaoCadastrado() {
 

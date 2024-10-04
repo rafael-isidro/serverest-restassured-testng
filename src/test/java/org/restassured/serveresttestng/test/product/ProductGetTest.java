@@ -23,6 +23,7 @@ import static utils.messages.ProductMessages.PRODUCT_MESSAGES;
 
 @Epic(EPIC_PRODUCT)
 @Story(PRODUCT_STORY_GET)
+@Test
 public class ProductGetTest {
 
     private static final ProductClient productClient = new ProductClient();
@@ -44,7 +45,6 @@ public class ProductGetTest {
 
     }
 
-    @Test
     @Description(CT_GET_001)
     public void testValidarListarProdutosComSucesso() {
 
@@ -58,7 +58,6 @@ public class ProductGetTest {
         softAssert.assertFalse(products.getProdutos().isEmpty());
     }
 
-    @Test
     @Description(CT_GET_002)
     public void testValidarBuscarProdutoPorIDComSucesso() {
 
@@ -73,7 +72,6 @@ public class ProductGetTest {
         Assert.assertEquals(response.get_id(), productRegistered.get_id());
     }
 
-    @Test
     @Description(CT_GET_003)
     public void testTentarBuscarUsuarioPorIDNaoCadastrado() {
 

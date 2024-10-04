@@ -18,6 +18,7 @@ import static utils.messages.UserMessages.USER_MESSAGES;
 
 @Epic(EPIC_USER)
 @Story(USER_STORY_PUT)
+@Test
 public class UserPutTest {
 
     private static final UserClient userClient = new UserClient();
@@ -45,7 +46,6 @@ public class UserPutTest {
 
     }
 
-    @Test
     @Description(CT_PUT_001)
     public void testEditarUsuarioComSucesso() {
 
@@ -60,7 +60,6 @@ public class UserPutTest {
 
     }
 
-    @Test
     @Description(CT_PUT_002)
     public void testTentarEditarUsuarioComFormatoEmailInvalido() {
 
@@ -78,7 +77,6 @@ public class UserPutTest {
 
     }
 
-    @Test
     @Description(CT_PUT_003)
     public void testTentarEditarUsuarioComDadosVazios() {
 
@@ -100,7 +98,6 @@ public class UserPutTest {
         softAssert.assertAll();
     }
 
-    @Test
     @Description(CT_PUT_004)
     public void testTentarEditarUsuarioComEmailJaExistente() {
 

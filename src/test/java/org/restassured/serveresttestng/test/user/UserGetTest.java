@@ -17,12 +17,12 @@ import static utils.messages.UserMessages.USER_MESSAGES;
 
 @Epic(EPIC_USER)
 @Story(USER_STORY_GET)
+@Test
 public class UserGetTest {
 
     private static final UserClient userClient = new UserClient();
     private static final SoftAssert softAssert = new SoftAssert();
 
-    @Test
     @Description(CT_GET_001)
     public void testValidarListarUsuariosComSucesso() {
         GetAllUsersResponseModel users = userClient.getAllUsers()
@@ -37,7 +37,6 @@ public class UserGetTest {
         softAssert.assertAll();
     }
 
-    @Test
     @Description(CT_GET_002)
     public void testValidarBuscarUsuarioPorIDComSucesso() {
 
@@ -52,7 +51,6 @@ public class UserGetTest {
         Assert.assertEquals(user.get_id(), userId);
     }
 
-    @Test
     @Description(CT_GET_003)
     public void testTentarBuscarUsuarioPorIDNaoCadastrado() {
 

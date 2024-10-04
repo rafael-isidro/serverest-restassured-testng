@@ -17,12 +17,12 @@ import static utils.messages.UserMessages.USER_MESSAGES;
 
 @Epic(EPIC_USER)
 @Story(USER_STORY_POST)
+@Test
 public class UserPostTest {
 
     private static final UserClient userClient = new UserClient();
     private static final SoftAssert softAssert = new SoftAssert();
 
-    @Test
     @Description(CT_REGISTER_001)
     public void testRealizarRegistroComSucesso() {
 
@@ -37,7 +37,6 @@ public class UserPostTest {
 
     }
 
-    @Test
     @Description(CT_REGISTER_002)
     public void testTentarRegistroComFormatoEmailInvalido() {
 
@@ -55,7 +54,6 @@ public class UserPostTest {
 
     }
 
-    @Test
     @Description(CT_REGISTER_003)
     public void testTentarRegistroComDadosVazios() {
 
@@ -77,7 +75,6 @@ public class UserPostTest {
         softAssert.assertAll();
     }
 
-    @Test
     @Description(CT_REGISTER_004)
     public void testTentarRegistroComEmailJaExistente() {
 
