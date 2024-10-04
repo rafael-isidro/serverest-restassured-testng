@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Serverest API">
+    <test name="Testes de Login">
+        <classes>
+            <class name="org.restassured.serveresttestng.test.LoginTest"/>
+        </classes>
+    </test>
+    <test name="Testes de Usuário">
+        <classes>
+            <class name="org.restassured.serveresttestng.test.user.UserGetTest"/>
+            <class name="org.restassured.serveresttestng.test.user.UserPostTest"/>
+            <class name="org.restassured.serveresttestng.test.user.UserPutTest"/>
+            <class name="org.restassured.serveresttestng.test.user.UserDeleteTest"/>
+        </classes>
+    </test>
+    <test name="Testes de Produto">
+        <classes>
+            <class name="org.restassured.serveresttestng.test.product.ProductGetTest"/>
+            <class name="org.restassured.serveresttestng.test.product.ProductPostTest"/>
+            <class name="org.restassured.serveresttestng.test.product.ProductPutTest"/>
+            <class name="org.restassured.serveresttestng.test.product.ProductDeleteTest"/>
+        </classes>
+    </test>
+</suite>
