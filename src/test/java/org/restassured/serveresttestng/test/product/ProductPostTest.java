@@ -9,7 +9,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import models.request.AuthRequestModel;
 import models.request.PostProductRequestModel;
-import models.response.PostUserResponseModel;
+import models.response.PostProductResponseModel;
 import org.apache.http.HttpStatus;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -46,11 +46,11 @@ public class ProductPostTest {
 
         PostProductRequestModel product = ProductDataFactory.validProduct();
 
-        PostUserResponseModel response = productClient.registerProduct(product, token)
+        PostProductResponseModel response = productClient.registerProduct(product, token)
                 .then()
                     .statusCode(HttpStatus.SC_CREATED)
                     .extract()
-                    .as(PostUserResponseModel.class);
+                    .as(PostProductResponseModel.class);
 
         Assert.assertEquals(response.getMessage(), PRODUCT_MESSAGES.successRegister());
 

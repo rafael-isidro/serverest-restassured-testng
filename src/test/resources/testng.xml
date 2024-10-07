@@ -22,4 +22,11 @@
             <class name="org.restassured.serveresttestng.test.product.ProductDeleteTest"/>
         </classes>
     </test>
+    <test name="Testes de Carrinho">
+        <classes>
+            <class name="org.restassured.serveresttestng.test.cart.CartGetTest"/>
+            <class name="org.restassured.serveresttestng.test.cart.CartPostTest"/>
+            <class name="org.restassured.serveresttestng.test.cart.CartDeleteTest"/>
+        </classes>
+    </test>
 </suite>

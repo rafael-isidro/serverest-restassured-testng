@@ -32,7 +32,7 @@ public class ProductGetTest {
     private static String token;
 
     @BeforeClass
-    static void setup() {
+    public static void setup() {
 
         AuthRequestModel loginCredentials = LoginDataFactory.validLogin();
 
@@ -59,7 +59,7 @@ public class ProductGetTest {
     }
 
     @Description(CT_GET_002)
-    public void testValidarBuscarProdutoPorIDComSucesso() {
+    public void testValidarBuscarProdutoPorIdComSucesso() {
 
         PostProductResponseModel productRegistered = registerProduct();
 
@@ -73,7 +73,7 @@ public class ProductGetTest {
     }
 
     @Description(CT_GET_003)
-    public void testTentarBuscarUsuarioPorIDNaoCadastrado() {
+    public void testTentarBuscarUsuarioPorIdNaoCadastrado() {
 
         String productId = ProductDataFactory.notRegisteredId();
 
@@ -93,6 +93,7 @@ public class ProductGetTest {
 
         return productClient.registerProduct(product, token)
                 .then()
-                .extract()
-                .as(PostProductResponseModel.class);
+                    .log().all()
+                    .extract()
+                    .as(PostProductResponseModel.class);
     }}

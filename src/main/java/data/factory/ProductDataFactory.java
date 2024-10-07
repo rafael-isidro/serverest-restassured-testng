@@ -12,7 +12,7 @@ public class ProductDataFactory {
                 faker.commerce().productName(),
                 faker.number().numberBetween(2, 1000),
                 faker.commerce().department(),
-                faker.number().numberBetween(15, 100)
+                faker.number().numberBetween(150, 100)
         );
     }
 
@@ -21,7 +21,7 @@ public class ProductDataFactory {
                 "",
                 faker.number().numberBetween(2, 1000),
                 "",
-                faker.number().numberBetween(15, 100)
+                faker.number().numberBetween(150, 100)
         );
     }
 
@@ -30,7 +30,7 @@ public class ProductDataFactory {
                 faker.commerce().productName(),
                 faker.number().negative(),
                 faker.commerce().department(),
-                faker.number().numberBetween(15, 100)
+                faker.number().numberBetween(150, 100)
         );
     }
 
@@ -39,7 +39,7 @@ public class ProductDataFactory {
                 faker.commerce().productName(),
                 0,
                 faker.commerce().department(),
-                faker.number().numberBetween(15, 100)
+                faker.number().numberBetween(150, 100)
         );
     }
 
