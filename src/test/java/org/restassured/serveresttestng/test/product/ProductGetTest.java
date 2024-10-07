@@ -93,7 +93,6 @@ public class ProductGetTest {
 
         return productClient.registerProduct(product, token)
                 .then()
-                    .log().all()
                     .extract()
                     .as(PostProductResponseModel.class);
     }}

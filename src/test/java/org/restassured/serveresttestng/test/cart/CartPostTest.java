@@ -88,7 +88,6 @@ public class CartPostTest {
         String response = cartClient.postCart(createdCart, token)
                 .then()
                     .statusCode(HttpStatus.SC_BAD_REQUEST)
-                .log().all()
                     .extract()
                     .path("'produtos[0].quantidade'");
 
