@@ -51,7 +51,7 @@ public class UserDeleteTest {
     }
 
     private static void registrarUsuario() {
-        PostUserRequestModel user = UserDataFactory.validUser();
+        PostUserRequestModel user = UserDataFactory.validAdminUser();
 
         userExistingId = userClient.registerUser(user)
                 .then()

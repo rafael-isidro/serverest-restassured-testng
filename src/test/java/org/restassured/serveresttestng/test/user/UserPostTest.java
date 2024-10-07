@@ -26,7 +26,7 @@ public class UserPostTest {
     @Description(CT_REGISTER_001)
     public void testRealizarRegistroComSucesso() {
 
-        PostUserRequestModel user = UserDataFactory.validUser();
+        PostUserRequestModel user = UserDataFactory.validAdminUser();
 
         PostUserResponseModel response = userClient.registerUser(user)
                 .then()

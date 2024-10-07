@@ -104,7 +104,7 @@ public class CartPostTest {
     }
 
     private PostUserRequestModel createUser() {
-        PostUserRequestModel newUser = UserDataFactory.validUser();
+        PostUserRequestModel newUser = UserDataFactory.validAdminUser();
         userClient.registerUser(newUser);
         return newUser;
     }

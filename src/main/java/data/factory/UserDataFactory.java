@@ -10,12 +10,12 @@ public class UserDataFactory {
     private static final String USER_EMAIL_PROP = "USER_EMAIL";
     private static final String USER_ID_PROP = "USER_ID";
 
-    public static PostUserRequestModel validUser() {
+    public static PostUserRequestModel validAdminUser() {
         return new PostUserRequestModel(
                 faker.name().username(),
                 faker.internet().emailAddress(),
                 faker.internet().password(),
-                String.valueOf(faker.random().nextBoolean())
+                "true"
         );
     }
 

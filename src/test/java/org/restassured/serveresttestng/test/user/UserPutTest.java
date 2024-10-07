@@ -28,7 +28,7 @@ public class UserPutTest {
     @BeforeClass
     public static void setUp() {
 
-        PostUserRequestModel user = UserDataFactory.validUser();
+        PostUserRequestModel user = UserDataFactory.validAdminUser();
 
         userExistingId = userClient.registerUser(user)
             .then()
@@ -49,7 +49,7 @@ public class UserPutTest {
     @Description(CT_PUT_001)
     public void testEditarUsuarioComSucesso() {
 
-        PostUserRequestModel user = UserDataFactory.validUser();
+        PostUserRequestModel user = UserDataFactory.validAdminUser();
 
         String response = userClient.updateUser(userExistingId, user)
                 .then()
