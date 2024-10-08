@@ -30,6 +30,17 @@ Antes de começar, verifique se você tem os seguintes pré-requisitos instalado
    ```bash
    mvn clean install
    ```
+4. Adicione o arquivo do properties no seguinte comando: src > main > resources > application-config.properties
+
+```
+
+spring.application.name=serverest-testng
+
+USER_EMAIL=fulanotest@qa.com.br
+USER_PSW=teste
+USER_ID=0ddv8VNsyYk4T8E2
+
+```
 
 ## Executando os Testes
 
