@@ -23,10 +23,10 @@ public class UserPostTest {
     @DataProvider(name = "userDataProvider")
     public Object[][] userDataProvider() {
         return new Object[][]{
-            {CT_REGISTER_001,       UserDataFactory.validAdminUser(),             HttpStatus.SC_CREATED, USER_MESSAGES.successRegister(),     "message"},
-            {CT_REGISTER_002,       UserDataFactory.invalidFormatEmailUser(),     HttpStatus.SC_BAD_REQUEST, USER_MESSAGES.invalidEmail(),    "email"},
-            {CT_REGISTER_003,       UserDataFactory.emptyNameUser(),              HttpStatus.SC_BAD_REQUEST, USER_MESSAGES.emptyName(),       "nome"},
-            {CT_REGISTER_004,       UserDataFactory.existingEmailUser(),          HttpStatus.SC_BAD_REQUEST, USER_MESSAGES.existingEmail(),   "message"}
+            {CT_REGISTER_001,       UserDataFactory.validAdminUser(),             HttpStatus.SC_CREATED,            USER_MESSAGES.successRegister(),        "message"},
+            {CT_REGISTER_002,       UserDataFactory.invalidFormatEmailUser(),     HttpStatus.SC_BAD_REQUEST,        USER_MESSAGES.invalidEmail(),           "email"},
+            {CT_REGISTER_003,       UserDataFactory.emptyNameUser(),              HttpStatus.SC_BAD_REQUEST,        USER_MESSAGES.emptyName(),              "nome"},
+            {CT_REGISTER_004,       UserDataFactory.existingEmailUser(),          HttpStatus.SC_BAD_REQUEST,        USER_MESSAGES.existingEmail(),          "message"}
         };
     }
 
@@ -43,6 +43,7 @@ public class UserPostTest {
                     .response();
 
             String actualMessage = response.path(path);
+
             Assert.assertEquals(actualMessage, message);
     }
 
