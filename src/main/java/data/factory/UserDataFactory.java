@@ -46,6 +46,16 @@ public class UserDataFactory {
         );
     }
 
+
+    public static PostUserRequestModel emptyNameUser() {
+        return new PostUserRequestModel(
+                "",
+                faker.internet().emailAddress(),
+                faker.internet().password(),
+                "true"
+        );
+    }
+
     public static PostUserRequestModel existingEmailUser() {
         return new PostUserRequestModel(
                 faker.name().username(),

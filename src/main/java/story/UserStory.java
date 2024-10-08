@@ -11,8 +11,8 @@ public class UserStory {
 
     //POST
     public static final String CT_REGISTER_001 = "CT-01 Validar registro com dados válidos";
-    public static final String CT_REGISTER_002 = "CT-02 Tentar registro com dados vazios";
-    public static final String CT_REGISTER_003 = "CT-03 Tentar registro com email com formato inválido";
+    public static final String CT_REGISTER_002 = "CT-02 Tentar registro com email com formato inválido";
+    public static final String CT_REGISTER_003 = "CT-03 Tentar registro com nome vazio";
     public static final String CT_REGISTER_004 = "CT-04 Tentar registro com email já existente";
 
     //GET

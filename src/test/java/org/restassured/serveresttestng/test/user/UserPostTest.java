@@ -2,15 +2,14 @@ package org.restassured.serveresttestng.test.user;
 
 import client.UserClient;
 import data.factory.UserDataFactory;
-import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
+import io.restassured.response.Response;
 import models.request.PostUserRequestModel;
-import models.response.PostUserResponseModel;
 import org.apache.http.HttpStatus;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import static story.UserStory.*;
 import static utils.messages.UserMessages.USER_MESSAGES;
@@ -19,75 +18,32 @@ import static utils.messages.UserMessages.USER_MESSAGES;
 @Story(USER_STORY_POST)
 @Test
 public class UserPostTest {
-
     private static final UserClient userClient = new UserClient();
-    private static final SoftAssert softAssert = new SoftAssert();
 
-    @Description(CT_REGISTER_001)
-    public void testRealizarRegistroComSucesso() {
+    @DataProvider(name = "userDataProvider")
+    public Object[][] userDataProvider() {
+        return new Object[][]{
+            {CT_REGISTER_001,       UserDataFactory.validAdminUser(),             HttpStatus.SC_CREATED, USER_MESSAGES.successRegister(),     "message"},
+            {CT_REGISTER_002,       UserDataFactory.invalidFormatEmailUser(),     HttpStatus.SC_BAD_REQUEST, USER_MESSAGES.invalidEmail(),    "email"},
+            {CT_REGISTER_003,       UserDataFactory.emptyNameUser(),              HttpStatus.SC_BAD_REQUEST, USER_MESSAGES.emptyName(),       "nome"},
+            {CT_REGISTER_004,       UserDataFactory.existingEmailUser(),          HttpStatus.SC_BAD_REQUEST, USER_MESSAGES.existingEmail(),   "message"}
+        };
+    }
 
-        PostUserRequestModel user = UserDataFactory.validAdminUser();
 
-        PostUserResponseModel response = userClient.registerUser(user)
+    @Test(dataProvider = "userDataProvider")
+    public void testRegistroUsuario(String description, PostUserRequestModel user, int statusCode, Object message, String path) {
+
+        io.qameta.allure.Allure.description(description);
+
+        Response response = userClient.registerUser(user)
                 .then()
+                    .statusCode(statusCode)
                     .extract()
-                    .as(PostUserResponseModel.class);
+                    .response();
 
-        Assert.assertEquals(response.getMessage(), USER_MESSAGES.successRegister());
-
+            String actualMessage = response.path(path);
+            Assert.assertEquals(actualMessage, message);
     }
 
-    @Description(CT_REGISTER_002)
-    public void testTentarRegistroComFormatoEmailInvalido() {
-
-        PostUserRequestModel user = UserDataFactory.invalidFormatEmailUser();
-
-        String response =
-                userClient.registerUser(user)
-                    .then()
-                        .statusCode(HttpStatus.SC_BAD_REQUEST)
-                        .extract()
-                        .path("email")
-                ;
-
-        Assert.assertEquals(response, USER_MESSAGES.invalidEmail());
-
-    }
-
-    @Description(CT_REGISTER_003)
-    public void testTentarRegistroComDadosVazios() {
-
-        PostUserRequestModel user = UserDataFactory.emptyDataUser();
-
-        PostUserRequestModel response =
-                userClient.registerUser(user)
-                    .then()
-                        .statusCode(HttpStatus.SC_BAD_REQUEST)
-                        .extract()
-                        .as(PostUserRequestModel.class)
-                ;
-
-        softAssert.assertEquals(response.getNome(), USER_MESSAGES.emptyName());
-        softAssert.assertEquals(response.getEmail(), USER_MESSAGES.emptyEmail());
-        softAssert.assertEquals(response.getPassword(), USER_MESSAGES.emptyPassword());
-        softAssert.assertEquals(response.getAdministrador(), USER_MESSAGES.invalidAdm());
-
-        softAssert.assertAll();
-    }
-
-    @Description(CT_REGISTER_004)
-    public void testTentarRegistroComEmailJaExistente() {
-
-        PostUserRequestModel user = UserDataFactory.existingEmailUser();
-
-        String response =
-                userClient.registerUser(user)
-                    .then()
-                        .statusCode(HttpStatus.SC_BAD_REQUEST)
-                        .extract()
-                        .path("message");
-        ;
-
-        Assert.assertEquals(response, USER_MESSAGES.existingEmail());
-    }
 }

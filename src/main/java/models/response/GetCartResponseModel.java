@@ -12,8 +12,8 @@ import java.util.List;
 public class GetCartResponseModel {
 
     private List<GetCartProductResponseModel> produtos;
-    private Integer precoTotal;
-    private Integer quantidadeTotal;
+    private Long precoTotal;
+    private Long quantidadeTotal;
     private String idUsuario;
     private String _id;
 
